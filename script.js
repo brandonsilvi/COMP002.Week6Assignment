@@ -39,8 +39,8 @@ preferencesForm.addEventListener('submit', function(event) {  //listen for form 
     event.preventDefault(); // Prevent page reload on form submission
     // Get the values from the form inputs
     const name = document.getElementById('name').value;
-    const bgColor = document.getElementById('background-Color').value;
-    const fgColor = document.getElementById('foreground-Color').value;
+    const bgColor = document.getElementById('background-color').value;
+    const fgColor = document.getElementById('foreground-color').value;
 
     // Store the values in localStorage
     localStorage.setItem('name', name);
