@@ -33,3 +33,11 @@ function applyPreferences() {  //pull stored values
 applyPreferences();
 
 //Set up event listener for form submission to save preferences
+const preferencesForm = document.getElementById('preferences-form'); //get the form element
+
+preferencesForm.addEventListener('submit', function(event) {  //listen for form submission
+    event.preventDefault(); // Prevent page reload on form submission
+    // Get the values from the form inputs
+    const name = document.getElementById('name').value;
+    const bgColor = document.getElementById('bgColor').value;
+    const fgColor = document.getElementById('fgColor').value;
