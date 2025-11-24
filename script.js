@@ -13,8 +13,8 @@
 //Breaking his down into sections first to read preferences and setting them using localStorage
 function applyPreferences() {  //pull stored values
     const savedName = localStorage.getItem('name');  //get stored name
-    const bgColor = localStorage.getItem('bgColor'); //get stored background color
-    const fgColor = localStorage.getItem('fgColor'); //get stored text color (text is foreground)
+    const bgColor = localStorage.getItem('backgroundColor'); //get stored background color
+    const fgColor = localStorage.getItem('foregroundColor'); //get stored text color (text is foreground)
     
 //Next the if statements to apply the preferences if they exist
 
@@ -39,5 +39,18 @@ preferencesForm.addEventListener('submit', function(event) {  //listen for form 
     event.preventDefault(); // Prevent page reload on form submission
     // Get the values from the form inputs
     const name = document.getElementById('name').value;
-    const bgColor = document.getElementById('bgColor').value;
-    const fgColor = document.getElementById('fgColor').value;
+    const bgColor = document.getElementById('background-Color').value;
+    const fgColor = document.getElementById('foreground-Color').value;
+
+    // Store the values in localStorage
+    localStorage.setItem('name', name);
+    localStorage.setItem('backgroundColor', bgColor);
+    localStorage.setItem('foregroundColor', fgColor);
+
+    // Apply the preferences immediately
+    applyPreferences();
+
+    // Notify the user that preferences were saved
+    alert('Your information has been saved for future visits!');
+
+});
